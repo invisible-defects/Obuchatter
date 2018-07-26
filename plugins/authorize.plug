@@ -1,0 +1,9 @@
+[Core]
+Name = Authorize
+Module = authorize
+
+[Documentation]
+Description = Plugin for PGU.mos authorization
+
+[Python]
+Version = 3+

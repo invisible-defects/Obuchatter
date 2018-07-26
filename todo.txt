@@ -1,0 +1,17 @@
+Plugins:
+
+- Authorization
+
+- Administration (maintaince notif, mos.ru unavailability notif, etc.)
+
+- Get register data (homework, marks)
+
+- School news (using RSS)
+
+- Messaging
+- - User groups (cheater, administration, etc.)
+
+- Gamification
+- - Add a goal
+- - Monitor goal
+- - Achievements
