@@ -12,7 +12,7 @@ class Authorize(BotPlugin):
 
     @botcmd
     def authorize(self, msg, args):
-        login, password = msg.split()
+        login, password = args.split()
         pas = password.encode('utf-8')
         pas = str(hashlib.md5(pas).hexdigest())
         session = requests.Session()
@@ -20,5 +20,9 @@ class Authorize(BotPlugin):
         auth_url = "https://mrko.mos.ru/dnevnik/services/index.php"
         auth_req = session.get(auth_url, headers=headers, params={"login": login,
             "password": pas}, allow_redirects=False)
-        globals.users[msg.frm] = session
-        return 'Authorized!'
+
+        if auth_req.status_code == 200: # TODO: not a valid check
+            print(session.get("https://mrko.mos.ru/dnevnik/services/dnevnik.php", headers=headers).content)
+            globals.users[msg.frm] = session
+            return 'Авторизован!' # Authorization successful
+        return 'Неправильный логин и\или пароль!' # Authorization not successful

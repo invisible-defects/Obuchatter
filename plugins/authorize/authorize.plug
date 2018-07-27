@@ -6,4 +6,4 @@ Module = authorize
 Description = Plugin for PGU.mos authorization
 
 [Python]
-Version = 3+
+Version = 3
